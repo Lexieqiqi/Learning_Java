@@ -1,0 +1,48 @@
+import pymysql
+import pandas as pd
+import numpy as np
+from pyecharts import Bar
+
+
+dbconn = pymysql.connect(
+        host = "10.245.142.240",
+        database = "hierarchy",
+        user = "root",
+        password = "root",
+        port = 3306,
+        charset = 'utf8')
+
+
+sqlcmd01 = "select card from 698second_batch_account_transaction_schedule limit 10"
+sqlcmd02 = "select Payment_mark from 698second_batch_account_transaction_schedule limit 10"
+sqlcmd03 = "select card from detail_account_transaction_schedule"
+sqlcmd04 = "select Payment_mark from detail_account_transaction_schedule"
+
+cursor = dbconn.cursor()
+cursor.execute(sqlcmd01)
+card_r = cursor.fetchall()
+card_r = pd.DataFrame(list(card_r))
+card_r = np.array(card_r)
+card_r = card_r.tolist()
+c_r=[]
+for m in range(0,len(card_r)):
+    for n in card_r[m]:
+        c_r.append(n)
+c_r = list(set(c_r))
+print(c_r)
+        
+cursor = dbconn.cursor()
+cursor.execute(sqlcmd02)
+degree = cursor.fetchall()
+degree = pd.DataFrame(list(degree))
+degree = np.array(degree)
+degree = degree.tolist()
+d_r=[]
+for m in range(0,len(degree)):
+    for n in degree[m]:
+        d_r.append(n)
+
+#r = []
+#r = np.vstack((c_r,d_r))
+#print(np.shape(r))
+

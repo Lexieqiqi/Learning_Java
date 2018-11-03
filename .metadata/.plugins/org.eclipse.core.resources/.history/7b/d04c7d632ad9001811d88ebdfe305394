@@ -1,0 +1,60 @@
+import pymysql
+import pandas as pd
+import numpy as np
+from pyecharts import Bar
+
+dbconn = pymysql.connect(
+        host = "10.245.142.240",
+        database = "hierarchy",
+        user = "root",
+        password = "root",
+        port = 3306,
+        charset = 'utf8')
+
+
+sqlcmd01 = "select mark from 698_second_batch_agbank_account_01mark"
+sqlcmd02 = "select card from 698_second_batch_agbank_account_01mark"
+
+cursor = dbconn.cursor()
+
+
+
+sqlcmd03 = "select card from detail_account_transaction_schedule"
+sqlcmd04 = "select amount from detail_account_transaction_schedule"
+
+
+cursor.execute(sqlcmd04)
+amount = cursor.fetchall()
+amount = pd.DataFrame(list(amount))
+amount = np.array(amount)
+amount = amount.tolist()
+l_ir=[]
+for m in range(0,len(amount)):
+    for n in amount[m]:
+        l_ir.append(int(n))
+
+ir = [0 for n in range(8)]
+for i in range(0,len(l_ir)):
+    if (0<l_ir[i]<500) :
+        ir[0] = ir[0] +1
+    if (500<l_ir[i]<=1000) :
+        ir[1] = ir[1] +1
+    if (1000<l_ir[i]<=5000) :
+        ir[2] = ir[2] +1
+    if (5000<l_ir[i]<=25000) :
+        ir[3] = ir[3]+1
+    elif (25000<l_ir[i]<=100000):
+        ir[4] = ir[4]+1
+    elif (100000<l_ir[i]<=500000):
+        ir[5] = ir[5]+1
+    elif (500000<l_ir[i]<=1000000):
+        ir[6] = ir[6]+1
+    if l_ir[i] >1000000
+        ir[7] = ir[7]+1
+
+bar = Bar("unpyramid_statics","u")
+bar.add("transaction",["500","1000","5000","25000","100000","500000","1000000",">1000000"],ir)
+bar.render()
+        
+
+

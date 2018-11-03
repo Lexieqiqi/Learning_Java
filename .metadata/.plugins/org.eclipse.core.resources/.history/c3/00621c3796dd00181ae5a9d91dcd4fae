@@ -1,0 +1,20 @@
+package model;
+import java.io.*;
+import java.util.Scanner;
+
+public class add_Cn_HF {
+	public add_Cn_HF() {
+		System.out.println("请输入客户姓名:");
+		Scanner scan = new Scanner(System.in);
+		String name = scan.nextLine();
+		System.out.println("发票抬头："+name);
+		System.out.println("销售日期："+this.getInvoice().getDate());
+		System.out.println("INVOICE TITLE："+title2);
+		System.out.println("Date of Sale："+this.getInvoice().getDate());
+		System.out.println(this.getInvoice().getDescription());
+		System.out.println("----------------------------------------------------------------------------");
+		String p= decimalFormat.format(this.getInvoice().cost());//format 返回的是字符串
+		System.out.println("总计\t\t\t\t\t$"+p);
+		System.out.println("Total\t\t\t\t\t$"+p);
+	}
+}

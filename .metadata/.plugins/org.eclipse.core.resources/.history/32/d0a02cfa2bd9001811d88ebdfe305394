@@ -1,0 +1,57 @@
+import pymysql
+import pandas as pd
+import numpy as np
+
+
+dbconn = pymysql.connect(
+        host = "10.245.142.240",
+        database = "hierarchy",
+        user = "root",
+        password = "root",
+        port = 3306,
+        charset = 'utf8')
+
+
+sqlcmd01 = "select amount from 698second_batch_account_transaction_schedule "
+sqlcmd02 = "select card from 698second_batch_account_transaction_schedule "
+sqlcmd03 = "select card from synthesize_person_id_card limit 10"
+
+cursor = dbconn.cursor()
+cursor.execute(sqlcmd03)
+card_ir = cursor.fetchall()
+card_ir = pd.DataFrame(list(card_ir))
+card_ir = np.array(card_ir)
+card_ir = card_ir.tolist()
+
+ir = []
+for m in range(0,len(card_ir)):
+    for n in card_ir[m]:
+        ir.append(n)
+print(ir)
+
+cursor.execute(sqlcmd01)
+mark = cursor.fetchall()
+mark = pd.DataFrame(list(mark))
+mark=np.array(mark)
+mark=mark.tolist()
+l_=[]
+
+for m in range(0,len(mark)):
+    for n in mark[m]:
+        l_.append(n)
+
+
+cursor.execute(sqlcmd02)
+name = cursor.fetchall()
+name = pd.DataFrame(list(name))
+name=np.array(name)
+name=name.tolist()
+l=[]
+for m in range(0,len(name)):
+    for n in name[m]:
+        l.append(n)
+
+
+dic = dict(zip(l,l_))
+
+

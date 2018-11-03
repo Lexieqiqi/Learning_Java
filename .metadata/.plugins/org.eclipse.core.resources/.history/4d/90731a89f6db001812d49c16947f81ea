@@ -1,0 +1,59 @@
+package model;
+import java.io.*;
+import java.util.*;
+
+public class Add_new_goods {
+	public Add_new_goods() {
+		System.out.println("please input product name:");
+		Scanner scan = new Scanner(System.in);
+		String Item = scan.nextLine();
+		
+		System.out.println("please input price:");
+		Scanner scan2 = new Scanner(System.in);
+		//scan2.nextLine();
+		double price = scan2.nextFloat();
+		System.out.println("please input units:");
+		Scanner scan3 = new Scanner(System.in);
+		int units = scan.nextInt();
+		this.set_goods(Item,price,units);
+
+	}
+	public void set_goods(String item,double price,int units) {
+		try {
+			// 在给定从中读取数据的文件名的情况下创建一个新 FileReader
+			InputStreamReader reader = new InputStreamReader(new FileInputStream("d:\\shopping.txt"));
+			// 创建一个使用默认大小输入缓冲区的缓冲字符输入流
+			BufferedReader br = new BufferedReader(reader);
+			//BufferedReader buffReader = new BufferedReader(reader);
+	        String strTmp = "";
+	        int num = 0;
+	        while((strTmp = br.readLine())!=null){
+	        	System.out.println(strTmp);
+	        	change_num(strTmp,num);
+	            num = num + 1;
+	        }
+	        br.close();
+	        
+			FileWriter write = new FileWriter("d:\\shopping.txt",true);
+			//BufferedWriter out = new BufferedWriter(new FileWriter(writename));
+			//out.write("\r\n"+(num+1)+"   "+item+"\t\t"+price+"\t\t"+units+"\t\t"+price*units); 		
+			//out.flush(); // 把缓存区内容压入文件
+			write.write("\r\n"+1+"\t"+item+"\t\t"+price+"\t\t"+units+"\t\t"+price*units);
+			write.close();
+			show_content sc = new show_content();
+			sc.print();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	public String change_num(String s,int n) {
+		int num = Integer.valueOf(s.split("\t+")[0]);
+		System.out.println(num);
+		num = n+2;
+		s.split("\t+")[0] = String.valueOf(num);
+		System.out.println(s.split("\t+")[0]);
+		return s;
+	}
+}

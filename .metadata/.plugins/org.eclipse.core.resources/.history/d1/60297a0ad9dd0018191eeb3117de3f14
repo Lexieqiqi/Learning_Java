@@ -1,0 +1,15 @@
+package model;
+
+public class Node {
+	//数据域
+	private String name;
+	private int units;
+	private double unitPrice;
+	public Node(String n,int u,double p) {
+		this.name = n;
+		this.units = u;
+		this.unitPrice = p;
+	}
+	protected Node pre;   //指针域
+	protected Node next;  //指针域
+}

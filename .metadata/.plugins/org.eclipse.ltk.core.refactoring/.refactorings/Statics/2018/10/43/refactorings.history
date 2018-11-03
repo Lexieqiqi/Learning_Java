@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Statics/in_out_degree&apos; to &apos;in_out_degree.py&apos;" description="Rename resource &apos;in_out_degree&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="in_out_degree" name="in_out_degree.py" stamp="1540604251439" updateReferences="true"/>
+</session>

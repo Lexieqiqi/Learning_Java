@@ -1,0 +1,10 @@
+package invoice;
+
+public class MainPart extends Invoice {
+	public double cost() {
+		return 0.0;
+	}
+	public void print() {
+		this.setDescription("----------------------------------------------------------------------------\nItem\t\t\tUnits\t\tUnite Price\t\tSubtotal\n");
+	}
+}

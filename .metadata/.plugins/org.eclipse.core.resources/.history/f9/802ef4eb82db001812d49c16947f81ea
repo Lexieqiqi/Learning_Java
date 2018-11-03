@@ -1,0 +1,30 @@
+package view;
+import java.io.*;
+import java.util.*;
+
+public class Interface {
+	int choice;
+	public void print() {
+		System.out.print("Select the follow No£º\r\n" + 
+				"\r\n" + 
+				"1 : Show files content\r\n" + 
+				"2 : Add a new invoice line\r\n" + 
+				"3 : Update a selected Invoice\r\n" + 
+				"4 : Delete a selected invoice line\r\n" + 
+				"5 : Add a ChinaStyle Header and Footer\r\n" + 
+				"6 : Add a AmericaStyle Header and Footer\r\n" + 
+				"7 : Add mixed Header and Footer \r\n" + 
+				"8 : Exit\r\n" + 
+				"");
+			Scanner in = new Scanner(System.in);
+			int flag = in.nextInt();
+			setChoice(flag);
+		    in.close();
+	}
+	public void setChoice(int choice) {
+		this.choice = choice;
+	}
+	public int getChoice() {
+		return this.choice;
+	}
+}

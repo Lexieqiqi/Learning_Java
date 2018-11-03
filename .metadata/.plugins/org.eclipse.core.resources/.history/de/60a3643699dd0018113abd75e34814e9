@@ -1,0 +1,18 @@
+package model;
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+public class add_Cn_HF {
+	public add_Cn_HF() {
+		System.out.println("请输入客户姓名:");
+		Scanner scan = new Scanner(System.in);
+		String name = scan.nextLine();
+		System.out.println("发票抬头："+name);
+		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+		System.out.println("销售日期：df.format(new Date());");
+		show_content sc = new show_content();
+		sc.print();
+		System.out.println("总计\t\t\t\t\t$");
+	}
+}

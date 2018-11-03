@@ -1,0 +1,23 @@
+package controller;
+import view.Interface;
+import model.*;
+
+public class Controller {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int choice = 0;
+		while(choice != 8) {
+			Interface itf = new Interface();
+			choice = itf.getChoice();
+			switch(choice) {
+				case 1:
+					System.out.println("your select is 1:Show files content");
+					show_content sc = new show_content();
+					sc.print();
+					break;
+			
+		}
+	}
+
+}

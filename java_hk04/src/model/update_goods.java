@@ -1,0 +1,50 @@
+package model;
+
+import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class update_goods extends Read_File{
+	public update_goods() {
+		System.out.println("please input the line No. of items:");
+		Scanner scan = new Scanner(System.in);
+		int no = scan.nextInt();
+		try {
+			InputStreamReader reader = new InputStreamReader(new FileInputStream("d:\\shopping.txt"));
+			BufferedReader br = new BufferedReader(reader);
+	        String description = "";
+	        String strTmp = "";
+	        int Line_sum = 1;
+	        String Line = "";
+	        Read_File rf = new Read_File(); 
+	        while((strTmp = br.readLine())!=null) {
+	            if(Line_sum == no) {
+	        		System.out.println("请输入需要更新的内容:");
+	        		Scanner scan1 = new Scanner(System.in);
+	        		int new_units = scan1.nextInt();
+	        		String[] ss = strTmp.split("\t+");
+	                strTmp = ss[0]+"\t"+ss[1]+"\t\t"+ss[2]+"\t\t"+new_units+"\t\t"+(new_units*(Double.valueOf(strTmp.split("\t+")[2])));
+	                System.out.println(strTmp); 
+	            }
+	            if(Line_sum == rf.getLine()) {
+	            	description = description + strTmp;
+	            }
+	            else {
+	            	description = description + strTmp + "\n";
+	            }
+	            Line_sum += 1;
+	        }
+	        br.close();
+	        BufferedWriter out = new BufferedWriter(new FileWriter("d:\\shopping.txt"));
+	        out.write(description);
+	        out.close();
+			show_content sc = new show_content();
+			sc.print();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+}

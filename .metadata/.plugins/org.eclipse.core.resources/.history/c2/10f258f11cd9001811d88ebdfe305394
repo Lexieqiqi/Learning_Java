@@ -1,0 +1,43 @@
+import pymysql
+import pandas as pd
+import numpy as np
+
+
+dbconn = pymysql.connect(
+        host = "10.245.142.240",
+        database = "hierarchy",
+        user = "root",
+        password = "root",
+        port = 3306,
+        charset = 'utf8')
+
+
+sqlcmd01 = "select mark from 698_second_batch_agbank_account_01mark "
+sqlcmd02 = "select name from 698_second_batch_agbank_account_01mark "
+
+cursor = dbconn.cursor()
+cursor.execute(sqlcmd01)
+attr = cursor.fetchall()
+attr = pd.DataFrame(list(attr))
+l_=[]
+attr=np.array(attr)
+attr=attr.tolist()
+for m in range(0,len(attr)):
+    for n in attr[m]:
+        l_.append(n)
+print(l_)
+
+cursor.execute(sqlcmd02)
+name = cursor.fetchall()
+name = pd.DataFrame(list(name))
+name=np.array(name)
+name=name.tolist()
+l=[]
+for m in range(0,len(name)):
+    for n in name[m]:
+        l.append(n)
+print(l)
+
+dic = dict(zip(l,l_))
+print(dic)
+    

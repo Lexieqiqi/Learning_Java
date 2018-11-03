@@ -1,0 +1,19 @@
+package invoice;
+import java.text.DecimalFormat;
+
+public class ChineseStyle extends HeaderAndFooter {
+	ChineseStyle(Invoice invoice,String s){
+		this.setInvoice(invoice);
+		this.getInvoice().setTitle(s);
+	}
+	public void print() {
+		DecimalFormat decimalFormat=new DecimalFormat(".00");//构造方法的字符格式这里如果小数不足2位,会以0补足.
+
+		System.out.println("发票抬头："+this.getInvoice().getTitle());
+		System.out.println("销售日期："+this.getInvoice().getDate());
+		System.out.println(this.getInvoice().getDescription());
+		System.out.println("----------------------------------------------------------------------------");
+		String p= decimalFormat.format(this.getInvoice().cost());//format 返回的是字符串
+		System.out.println("总计\t\t\t\t\t$"+p);
+	}
+}

@@ -1,0 +1,25 @@
+package model;
+import java.io.*;
+
+import java.util.Scanner;
+
+public class del_goods {
+	public del_goods() {
+		System.out.println("Input the line No you want to delete:");
+		Scanner scan = new Scanner(System.in);
+		int no = scan.nextInt();
+		System.out.println("Are you sure to delete?(Y/N)");
+		try {
+			char c=(char)System.in.read();
+			if(c == 'Y'|| c == 'y') {
+				
+			}
+			if(c == 'N'|| c == 'n') {
+				
+			}
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,30 @@
+import pymysql
+import pandas as pd
+import numpy as np
+
+
+dbconn = pymysql.connect(
+        host = "10.245.142.240",
+        database = "hierarchy",
+        user = "root",
+        password = "root",
+        port = 3306,
+        charset = 'utf8')
+
+
+sqlcmd01 = "select summary from 698second_batch_account_transaction_schedule"
+sqlcmd02 = "select card from 698second_batch_account_transaction_schedule"
+
+cursor = dbconn.cursor()
+cursor.execute(sqlcmd02)
+card = cursor.fetchall()
+card = pd.DataFrame(list(card))
+card = np.array(card)
+card = card.tolist()
+
+l2 = []
+for m in range(0,len(card)):
+    for n in card[m]:
+        l2.append(n)
+print(l2)
+

@@ -1,0 +1,79 @@
+import pymysql
+import pandas as pd
+import numpy as np
+from pyecharts import Bar
+
+dbconn = pymysql.connect(
+        host = "10.245.142.240",
+        database = "hierarchy",
+        user = "root",
+        password = "root",
+        port = 3306,
+        charset = 'utf8')
+
+
+sqlcmd01 = "select mark from 698_second_batch_agbank_account_01mark"
+sqlcmd02 = "select card from 698_second_batch_agbank_account_01mark"
+
+cursor = dbconn.cursor()
+
+cursor.execute(sqlcmd01)
+mark = cursor.fetchall()
+mark = pd.DataFrame(list(mark))
+mark=np.array(mark)
+mark=mark.tolist()
+l_=[]
+
+for m in range(0,len(mark)):
+    for n in mark[m]:
+        l_.append(n)
+
+
+cursor.execute(sqlcmd02)
+name = cursor.fetchall()
+name = pd.DataFrame(list(name))
+name=np.array(name)
+name=name.tolist()
+l=[]
+for m in range(0,len(name)):
+    for n in name[m]:
+        l.append(n)
+
+
+dic = dict(zip(l,l_))
+print(dic)
+
+sqlcmd03 = "select card from detail_account_transaction_schedule"
+sqlcmd04 = "select amount from detail_account_transaction_schedule"
+
+
+cursor.execute(sqlcmd04)
+amount = cursor.fetchall()
+amount = pd.DataFrame(list(amount))
+amount = np.array(amount)
+amount = amount.tolist()
+l_ir=[]
+for m in range(0,len(amount)):
+    for n in amount[m]:
+        print(int(n))
+        l_ir.append(int(n))
+
+ir = [0 for n in range(5)]
+for i in range(0,len(l_ir)):
+    if (l_ir[i]<5000) :
+        ir[0] = ir[0]+1
+    elif (5000<l_ir[i]<=10000):
+        ir[1] = ir[1]+1
+    elif (10000<l_ir[i]<=25000):
+        ir[2] = ir[2]+1
+    elif (25000<l_ir[i]<=50000):
+        ir[3] = ir[3]+1
+    else:
+        ir[4] = ir[4]+1
+
+bar = Bar("unpyramid_statics","u")
+bar.add("transaction",["5000","10000","25000","50000",">50000"],ir)
+bar.render()
+        
+
+

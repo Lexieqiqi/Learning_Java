@@ -1,0 +1,50 @@
+package model;
+
+import java.util.Scanner;
+
+public class Goods_LinkList {
+	public Node head;
+	public Node current;
+	private int pos = 0;
+	private int length = 0;
+	public Goods_LinkList() {
+		this.head = null;
+	}
+	public void add() {
+		System.out.println("please input product name:");
+		Scanner scan = new Scanner(System.in);
+		String Item = scan.nextLine();
+		
+		System.out.println("please input price:");
+		Scanner scan1 = new Scanner(System.in);
+		double price = scan1.nextFloat();
+		
+		System.out.println("please input units:");
+		Scanner scan2 = new Scanner(System.in);
+		int units = scan2.nextInt();
+		
+		current = head;
+		Node n = new Node(Item,units,price);
+		if(head == null) {
+			n.next = head;
+			head = n;
+		}
+		else {
+			n.next = current;
+			current = n;
+		}
+		length ++ ;
+	}
+	
+	public void update() {
+		System.out.println("please input the line No. of items:");
+		Scanner scan = new Scanner(System.in);
+		int index = scan.nextInt();
+		
+		System.out.println("请输入需要更新的内容:");
+		Scanner scan1 = new Scanner(System.in);
+		int new_units = scan1.nextInt();
+		
+		
+	}
+}

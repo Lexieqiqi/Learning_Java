@@ -1,0 +1,16 @@
+package invoice;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Invoice invoice = new MainPart();
+		invoice = new Read(invoice);
+		invoice = new Goods(invoice,"Fire Wheel Tire",4,154.3);
+		invoice = new Goods(invoice,"Front Fender",1,300.45);
+		Invoice invoice1 = new ChineseStyle(invoice,"哈尔滨工业大学");
+		invoice1.print();
+		EnglishStyle test2 = new EnglishStyle(invoice1,"Harbin Institute of Technology");
+		test2.print();
+	}
+}

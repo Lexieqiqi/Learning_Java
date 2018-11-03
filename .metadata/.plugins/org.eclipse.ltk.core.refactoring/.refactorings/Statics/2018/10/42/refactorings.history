@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Statics/unpyramid_person_card&apos; to &apos;unpyramid_person_card.py&apos;" description="Rename resource &apos;unpyramid_person_card&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="unpyramid_person_card" name="unpyramid_person_card.py" stamp="1539923724228" updateReferences="true"/>
+</session>

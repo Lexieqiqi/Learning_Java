@@ -1,0 +1,13 @@
+package model;
+
+import java.util.Scanner;
+
+public class update_goods {
+	public update_goods() {
+		System.out.println("please input the line No. of items:");
+		Scanner scan = new Scanner(System.in);
+		int no = scan.nextInt();
+		Read_File f = new Read_File(no);
+	}
+
+}

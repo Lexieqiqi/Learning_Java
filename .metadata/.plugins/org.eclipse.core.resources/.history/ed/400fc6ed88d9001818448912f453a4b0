@@ -1,0 +1,19 @@
+import pymysql
+import pandas as pd
+import numpy as np
+from pyecharts import Bar
+
+
+dbconn = pymysql.connect(
+        host = "10.245.142.240",
+        database = "hierarchy",
+        user = "root",
+        password = "root",
+        port = 3306,
+        charset = 'utf8')
+
+
+#sqlcmd01 = "select card from bank_aggregation_account_transaction_schedule"
+sqlcmd02 = "select amount from bank_aggregation_account_transaction_schedule"
+#sqlcmd03 = "select card from detail_account_transaction_schedule"
+sqlcmd04 = "select amount from detail_account_transaction_schedule"

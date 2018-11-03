@@ -1,0 +1,88 @@
+import pymysql
+import pandas as pd
+import numpy as np
+from pyecharts import Bar
+from pyecharts.echarts.option import mark_point
+
+dbconn = pymysql.connect(
+        host = "10.245.142.240",
+        database = "hierarchy",
+        user = "root",
+        password = "root",
+        port = 3306,
+        charset = 'utf8')
+
+
+sqlcmd01 = "select card from bank_aggregation_account_transaction_schedule"
+sqlcmd02 = "select amount from bank_aggregation_account_transaction_schedule"
+sqlcmd03 = "select card from detail_account_transaction_schedule"
+sqlcmd04 = "select amount from detail_account_transaction_schedule"
+
+cursor = dbconn.cursor()
+cursor.execute(sqlcmd02)
+amount1 = cursor.fetchall()
+amount1 = pd.DataFrame(list(amount1))
+amount1 = np.array(amount1)
+amount1 = amount1.tolist()
+l_r=[]
+for m in range(0,len(amount1)):
+    for n in amount1[m]:
+        l_r.append(int(n))
+
+r = [0 for n in range(8)]
+for i in range(0,len(l_r)):
+    if (0<l_r[i]<100) :
+        r[0] = r[0] +1
+    if (100<l_r[i]<=500) :
+        r[1] = r[1] +1
+    if (500<l_r[i]<=1000) :
+        r[2] = r[2] +1
+    if (1000<l_r[i]<=5000) :
+        r[3] = r[3]+1
+    elif (5000<l_r[i]<=10000):
+        r[4] = r[4]+1
+    elif (10000<l_r[i]<=50000):
+        r[5] = r[5]+1
+    elif (50000<l_r[i]<=100000):
+        r[6] = r[6]+1
+    if (l_r[i] >100000) :
+        r[7] = r[7]+1
+
+cursor.execute(sqlcmd04)
+amount = cursor.fetchall()
+amount = pd.DataFrame(list(amount))
+amount = np.array(amount)
+amount = amount.tolist()
+l_ir=[]
+for m in range(0,len(amount)):
+    for n in amount[m]:
+        l_ir.append(int(n))
+
+ir = [0 for n in range(8)]
+for i in range(0,len(l_ir)):
+    if (0<l_ir[i]<100) :
+        ir[0] = ir[0] +1
+    if (100<l_ir[i]<=500) :
+        ir[1] = ir[1] +1
+    if (500<l_ir[i]<=1000) :
+        ir[2] = ir[2] +1
+    if (1000<l_ir[i]<=5000) :
+        ir[3] = ir[3]+1
+    elif (5000<l_ir[i]<=10000):
+        ir[4] = ir[4]+1
+    elif (10000<l_ir[i]<=50000):
+        ir[5] = ir[5]+1
+    elif (50000<l_ir[i]<=100000):
+        ir[6] = ir[6]+1
+    if (l_ir[i] >100000) :
+        ir[7] = ir[7]+1
+
+attr = ["100","500","1000","5000","10000","50000","100000",">100000"]
+v1 = r
+v2 = ir
+bar = Bar("(un)pyramid_transation")
+bar.add("pyramid",attr,v1,mark_line=["average"],mark_point=["max","min"])
+bar.add("unpyramid",attr,v2,mark_line=["average"],mark_point=["max","min"])
+        
+
+

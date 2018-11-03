@@ -1,0 +1,106 @@
+-- VERSION_5
+-- START DISKCACHE_2
+D:\java_homewk\.metadata\.plugins\org.eclipse.core.resources\.projects\Statics\com.python.pydev.analysis\v2_indexcache
+analyse01|1540601060699830000|D:\Programming\Lab_duty\Statics\analyse01.py
+unpyramid_person_card|1540552720565605000|D:\Programming\Lab_duty\Statics\unpyramid_person_card.py
+tensorflow_study.tf_04|1534988188801885000|D:\Programming\Lab_duty\Statics\tensorflow_study\tf_04.py
+tensorflow_study.tf_sql|1535247999357875000|D:\Programming\Lab_duty\Statics\tensorflow_study\tf_sql.py
+tensorflow_study.tf_05|1534661406733132000|D:\Programming\Lab_duty\Statics\tensorflow_study\tf_05.py
+in_out_degree|1540608681149814000|D:\Programming\Lab_duty\Statics\in_out_degree.py
+tensorflow_study.tf_lab|1535247999389810000|D:\Programming\Lab_duty\Statics\tensorflow_study\tf_lab.py
+multiply|1540564353897183000|D:\Programming\Lab_duty\Statics\multiply.py
+tensorflow_study.tf_01|1534411376306639000|D:\Programming\Lab_duty\Statics\tensorflow_study\tf_01.py
+tensorflow_study.tf_02|1534411376327591000|D:\Programming\Lab_duty\Statics\tensorflow_study\tf_02.py
+tensorflow_study.tf_03|1534420264421649000|D:\Programming\Lab_duty\Statics\tensorflow_study\tf_03.py
+-- END DISKCACHE
+-- START DICTIONARY
+22
+16=analyse01
+13=D:\Programming\Lab_duty\Statics\tensorflow_study\tf_01.py
+21=D:\Programming\Lab_duty\Statics\multiply.py
+1=D:\Programming\Lab_duty\Statics\tensorflow_study\tf_02.py
+20=unpyramid_person_card
+7=D:\Programming\Lab_duty\Statics\tensorflow_study\tf_03.py
+10=tensorflow_study.tf_sql
+12=tensorflow_study.tf_04
+4=tensorflow_study.tf_05
+6=tensorflow_study.tf_lab
+14=tensorflow_study.tf_01
+2=tensorflow_study.tf_02
+5=D:\Programming\Lab_duty\Statics\tensorflow_study\tf_lab.py
+8=tensorflow_study.tf_03
+15=D:\Programming\Lab_duty\Statics\analyse01.py
+19=D:\Programming\Lab_duty\Statics\unpyramid_person_card.py
+9=D:\Programming\Lab_duty\Statics\tensorflow_study\tf_sql.py
+3=D:\Programming\Lab_duty\Statics\tensorflow_study\tf_05.py
+11=D:\Programming\Lab_duty\Statics\tensorflow_study\tf_04.py
+17=D:\Programming\Lab_duty\Statics\in_out_degree.py
+18=in_out_degree
+22=multiply
+-- END DICTIONARY
+-- START TREE 1
+60
+W|1|W!1^6#1*19@
+X|2|X!3^9#1*35@X!5^55#1*51@
+Y|1|Y!3^10#1*35@
+a|6|a!3^20#1*35@a!7^11#1*67@a!9^22#1*83@a!11^13#1*99@a!5^28#5*51@a!13^20#1*115@
+add|1|adder_node!13^22#1*115@
+amo|2|amount1!15^23#1*131@amount!15^61#1*131@
+att|1|attr!15^97#1*131@
+b|3|b!1^7#1*19@b!5^36#1*51@b!13^21#1*115@
+bar|1|bar!15^100#1*131@
+bat|1|BATCH_SIZE!3^5#1*35@
+c_r|2|c_r_nonrep!17^33#1*147@c_r!17^28#1*147@
+car|3|card_r!17^24#1*147@card!19^28#1*163@card_ir!21^21#1*179@
+cla|1|classify!9^34#1*83@
+cos|1|cost!1^12#1*19@
+cou|1|count_non!17^34#1*147@
+cur|4|cursor!21^19#1*179@cursor!19^18#1*163@cursor!15^21#1*131@cursor!17^22#1*147@
+d_r|1|d_r!17^45#1*147@
+dat|2|data_classify!5^37#1*51@data!5^17#1*51@
+dbc|5|dbconn!17^14#1*147@dbconn!21^12#1*179@dbconn!19^12#1*163@dbconn!15^13#1*131@dbconn!9^16#1*83@
+deg|1|degree!17^41#1*147@
+dic|2|dict!19^45#1*163@dic!21^59#1*179@
+div|1|div!9^36#5*83@
+end|1|end!3^36#9*35@
+es|1|es!9^44#1*83@
+hyp|1|hypothesis!1^9#1*19@
+ini|4|init_op!3^27#5*35@init_op!11^17#5*99@init_op!7^16#5*67@init!13^9#1*115@
+ir|2|ir!21^26#1*179@ir!15^70#1*131@
+l|3|l!19^33#1*163@l!21^53#1*179@l!9^25#1*83@
+l2|1|l2!19^39#1*163@
+l_|2|l_!21^41#1*179@l_!9^24#1*83@
+l_i|1|l_ir!15^65#1*131@
+l_r|1|l_r!15^27#1*131@
+los|1|loss!3^23#1*35@
+mar|1|mark!21^37#1*179@
+n|1|n!9^28#9*83@
+nam|2|name!19^20#1*163@name!21^49#1*179@
+nod|3|node2!13^6#1*115@node1!13^5#1*115@node3!13^7#1*115@
+non|1|nonrep!17^36#1*147@
+opt|1|optimizer!1^14#1*19@
+r|2|r!17^51#1*147@r!15^32#1*131@
+rng|1|rng!3^8#1*35@
+s|1|s!5^42#18*51@
+see|1|seed!3^6#1*35@
+ses|2|sess!1^17#1*19@sess!13^14#1*115@
+sql|12|sqlcmd01!21^15#1*179@sqlcmd!9^19#1*83@sqlcmd02!15^17#1*131@sqlcmd03!21^17#1*179@sqlcmd02!19^16#1*163@sqlcmd04!15^19#1*131@sqlcmd01!17^17#1*147@sqlcmd02!17^18#1*147@sqlcmd04!17^20#1*147@sqlcmd02!21^16#1*179@sqlcmd01!19^15#1*163@sqlcmd03!17^19#1*147@
+sta|1|start!3^35#9*35@
+ste|1|STEPS!3^29#5*35@
+sum|2|sum0!15^51#1*131@sum!15^88#1*131@
+tab|1|table!5^19#1*51@
+tot|1|total_loss!3^40#13*35@
+tra|2|train_step!3^24#1*35@train!1^15#1*19@
+v1|1|v1!15^98#1*131@
+v2|1|v2!15^99#1*131@
+w1|3|w1!3^14#1*35@w1!11^10#1*99@w1!7^7#1*67@
+w2|3|w2!7^8#1*67@w2!3^15#1*35@w2!11^11#1*99@
+x|4|x!11^9#1*99@x!3^17#1*35@x!7^6#1*67@x!5^25#1*51@
+x_t|1|x_train!1^3#1*19@
+y|3|y!3^21#1*35@y!7^12#1*67@y!11^14#1*99@
+y_|1|y_!3^18#1*35@
+y_t|1|y_train!1^4#1*19@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

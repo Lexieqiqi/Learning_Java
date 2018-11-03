@@ -1,0 +1,5 @@
+package invoice;
+
+public class Chinese_English_Style extends HeaderAndFooter {
+
+}

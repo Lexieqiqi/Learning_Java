@@ -1,0 +1,33 @@
+package invoice;
+
+public class Goods extends Invoice{
+	private String item;
+	private int units;
+	private double price;
+	private Invoice invoice;
+	
+	public Goods(Invoice invoice,String n,int u,double p){
+		this.setInvoice(invoice);
+		this.item= n;
+		this.units=u;
+		this.price=p;
+	}
+	public void setInvoice(Invoice i) {
+		this.invoice = i;
+    }
+    public double getsubtotal() {
+    	return units*price;
+    }
+	public double cost() {
+		return this.getsubtotal()+this.invoice.cost();
+	}
+
+	public String getDescription() {
+		return this.invoice.getDescription()+this.item+"\t\t"+this.units+"\t\t"+this.price+"\t\t\t"+this.getsubtotal()+"\n";
+	}
+	public void print() {
+		//
+	}
+}
+
+
